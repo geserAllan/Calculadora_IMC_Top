@@ -36,7 +36,7 @@
         button:hover {
             background-color: lightsalmon;
         }
-        .first-step,
+        .final-step,
         .second-step {
             display: none;
         }
@@ -53,7 +53,7 @@
     <div class="container">
         <div class="first-step">
             <p>Clique no botão para calcular seu IMC</p>
-            <button>Iniciar</button>
+            <button onclick="go(1,2)">Iniciar</button>
         </div>
         <div class="second-step">
             <h3>Calculadora Imc</h3>
@@ -79,5 +79,41 @@
     const firstDiv = document.querySelector('.first-step');
     const secondDiv = document.querySelector('.second-step');
     const thirdDiv = document.querySelector('.final-step');
+
+    function go(currentStep, nextStep) 
+    {    
+        let displayNone, displayBlock;
+        if (currentStep == 1)
+        {
+            displayNone = firstDiv;
+        }
+        else if (currentStep ==2)
+        {
+            displayNone = secondDiv;
+        }
+        else
+        {
+            displayNone = thirdDiv;
+        }
+        displayNone.style.display ='none'
+
+        if (nextStep == 1)
+        {
+            displayBlock = firstDiv;
+        }
+        else if (nextStep ==2)
+        {
+            displayBlock = secondDiv;
+        }
+        else
+        {
+            displayBlock = thirdDiv;
+        }
+        displayBlock.style.display ='block'
+
+
+        
+        
+    }
 </script>
 </html>
