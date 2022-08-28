@@ -46,6 +46,7 @@
             border: none;
             outline: none;
         }
+                
     </style>
 </head>
 <body>
@@ -64,7 +65,7 @@
             <label for="">Digite sua altura:</label>
             <input type="number" placeholder="Sua altura" id="altura">
             <br><br>
-            <button>Calcular</button>
+            <button onclick="validate()">Calcular</button>
         </div>
         <div class="final-step">
             <h3>Resultado!</h3>
@@ -76,9 +77,9 @@
 </body>
 <script>
 
-    const firstDiv = document.querySelector('.first-step');
+    const firstDiv  = document.querySelector('.first-step');
     const secondDiv = document.querySelector('.second-step');
-    const thirdDiv = document.querySelector('.final-step');
+    const thirdDiv  = document.querySelector('.final-step');
 
     function go(currentStep, nextStep) 
     {    
@@ -111,9 +112,40 @@
         }
         displayBlock.style.display ='block'
 
+    }    
+
+    function validate()
+    {
+        const peso   = document.getElementById('peso');
+        const altura = document.getElementById('altura');
+        peso.style.border   = '1px solid red';
+        altura.style.border = '1px solid red';
+        if (!peso.value || !altura.value)
+        {
+            if (!peso.value && !altura.value)
+            {
+                peso.style.border   = '1px solid red';
+                altura.style.border = '1px solid red';
+            }
+            else if (!peso)
+            {
+                peso.style.border   = '1px solid red';
+            }
+            else
+            {
+                altura.style.border = '1px solid red'
+            }
+        }
+        else 
+        {
+            console.log('Tudo Ok! Calcular ')
+        }
+
+    }    
+
 
         
         
-    }
+    
 </script>
 </html>
