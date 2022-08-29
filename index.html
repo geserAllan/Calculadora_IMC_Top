@@ -35,6 +35,11 @@
         }
         button:hover {
             background-color: steelblue;
+            
+        }
+        button:active {
+            background-color: springgreen;
+
         }
         .final-step,
         .second-step {
@@ -154,7 +159,7 @@
             
                 console.log('Normal | Obesidade 0');
                 result.innerHTML = 'Normal | Obesidade 0'
-                result.style.color = 'green'
+                result.style.color = 'yellowgreen'
             }
 
 
@@ -162,7 +167,7 @@
             
                 console.log('Sobrepeso | Obesidade 1');
                 result.innerHTML = 'Sobrepeso | Obesidade: I'
-                result.style.color = 'lightyellow'
+                result.style.color = 'yellow'
             }
 
             else if(imc >=30 && imc < 40) {
