@@ -46,6 +46,9 @@
             border: none;
             outline: none;
         }
+        #resultado {
+            font-size: 25px;
+        }
                 
     </style>
 </head>
@@ -70,8 +73,8 @@
         <div class="final-step">
             <h3>Resultado!</h3>
             <p id="resultado">...</p>
-            <button>Calcular novamente</button>
-            <button>Finalizar</button>
+            <button onclick="go(3,2)">Calcular novamente</button>
+            <button onclick="go(3,1)">Finalizar</button>
         </div>
     </div>
 </body>
@@ -139,13 +142,45 @@
         else 
         {
             let imc = peso.value / (altura.value * altura.value)
+            const result = document.getElementById('resultado');
+            if(imc < 18.5) {
             
-            if(imc < 18.5)
-            {
                 console.log('Magreza | Obesidade 0');
+                result.innerHTML = 'Magreza | Obesidade 0'
+                result.style.color = 'lightgreen'
             }
-            else if(imc >= 18.5 && imc < 25);            
+
+            else if(imc >= 18.5 && imc < 25) {
+            
+                console.log('Normal | Obesidade 0');
+                result.innerHTML = 'Normal | Obesidade 0'
+                result.style.color = 'green'
+            }
+
+
+            else if(imc >=25 && imc < 30) { 
+            
+                console.log('Sobrepeso | Obesidade 1');
+                result.innerHTML = 'Sobrepeso | Obesidade 1'
+                result.style.color = 'lightyellow'
+            }
+
+            else if(imc >=30 && imc < 40) {
+            
+                console.log('Obesidade | Obesidade 2');
+                result.innerHTML = 'Obesidade | Obesidade 2'
+                result.style.color = 'yellow'
+            }
+
+            else {
+            
+                console.log('Obesidade | Obesidade 3')
+                result.innerHTML = 'Obesidade | Obesidade 3'
+                result.style.color = 'red'
+            }  
+            go(2,3);
         }
+            
     }    
         
 </script>
